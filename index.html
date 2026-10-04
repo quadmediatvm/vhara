@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#171816">
+<meta name="description" content="V Hara — Business & Legal Consulting. Where Problems Find Their First Solution.">
+<meta name="keywords" content="V Hara, business consulting, legal compliance, audit support, tax filing, Kerala">
+<title>V Hara — Where Problems Find Their First Solution</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fbfaf7;--white:#ffffff;--ink:#171512;--muted:#706c63;
+  --line:#e5dfd2;--green:#9a7627;--green-soft:#f4edda;--stone:#f2eee5;
+  --gold:#b38a32;--gold-deep:#8f6b20;--dark-gold:#6e531d;
+  --serif:"DM Serif Display",Georgia,serif;--sans:Inter,Arial,sans-serif;
+  --max:1240px;--radius:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.container{width:min(calc(100% - 48px),var(--max));margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(247,245,240,.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(220,217,208,.72)}
+.nav{height:78px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.08em;font-size:15px}
+.brand-mark{width:32px;height:32px;border:1.5px solid var(--green);border-radius:50%;display:grid;place-items:center;color:var(--green);font-family:var(--serif);font-size:18px}
+.navlinks{display:flex;gap:28px;align-items:center;font-size:13px;color:#454740}
+.navlinks a{position:relative}
+.navlinks a:after{content:"";position:absolute;left:0;bottom:-7px;width:0;height:1px;background:var(--green);transition:.25s}
+.navlinks a:hover:after{width:100%}
+.nav-cta{padding:11px 17px;border:1px solid var(--green);border-radius:999px;color:var(--green);font-weight:600}
+.menu{display:none;border:0;background:none;font-size:24px}
+.hero{padding:110px 0 92px;border-bottom:1px solid var(--line)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:end}
+.eyebrow{display:flex;align-items:center;gap:10px;color:var(--green);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:25px}
+.eyebrow:before{content:"";width:30px;height:1px;background:var(--green)}
+h1,h2,h3,p{margin-top:0}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(58px,8vw,112px);line-height:.92;letter-spacing:-.045em;max-width:920px;margin-bottom:30px}
+.hero-copy{font-size:18px;color:var(--muted);max-width:580px}
+.actions{display:flex;gap:12px;margin-top:35px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;padding:14px 20px;border:1px solid var(--ink);font-size:13px;font-weight:700;transition:.25s}
+.btn.primary{background:var(--green);color:white;border-color:var(--green)}
+.btn.secondary{background:transparent}
+.btn:hover{transform:translateY(-2px)}
+.hero-note{border-top:1px solid var(--line);padding-top:18px;color:var(--muted);font-size:13px}
+.hero-note strong{display:block;color:var(--ink);font-size:16px;margin-bottom:8px}
+.marquee{overflow:hidden;border-bottom:1px solid var(--line);white-space:nowrap}
+.marquee-track{display:flex;width:max-content;animation:move 28s linear infinite}
+.marquee span{font-family:var(--serif);font-size:25px;padding:18px 22px;color:#4d514b}
+.marquee span:nth-child(even){color:var(--green)}
+@keyframes move{to{transform:translateX(-50%)}}
+section{padding:105px 0;border-bottom:1px solid var(--line)}
+.section-head{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;margin-bottom:58px}
+.kicker{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--green);font-weight:700}
+.section-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(42px,5vw,72px);line-height:.98;letter-spacing:-.035em;margin:0}
+.section-head p{color:var(--muted);font-size:17px;max-width:610px;margin:8px 0 0}
+.problem{background:var(--ink);color:white;border-radius:28px;padding:46px}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end}
+.problem h3{font-family:var(--serif);font-weight:400;font-size:42px;line-height:1.03;margin-bottom:16px}
+.problem p{color:#c9cbc4;max-width:620px}
+.problem-list{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#44473f;border:1px solid #44473f}
+.problem-list div{background:var(--ink);padding:18px;font-size:13px;color:#e1e2dd}
+.problem-list span{color:#8f9f91;margin-right:9px}
+.services{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.card{border:1px solid var(--line);background:rgba(255,255,255,.38);padding:30px;border-radius:20px;min-height:220px;transition:.3s}
+.card:hover{transform:translateY(-4px);background:var(--white);box-shadow:0 18px 50px rgba(23,24,22,.06)}
+.number{font-size:12px;color:var(--green);font-weight:700;letter-spacing:.1em}
+.card h3{font-family:var(--serif);font-size:34px;font-weight:400;line-height:1;margin:50px 0 13px}
+.card p{font-size:14px;color:var(--muted);max-width:520px}
+.process{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.step{padding:27px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-height:220px}
+.step-num{font-family:var(--serif);font-size:34px;color:var(--green)}
+.step h3{font-size:17px;margin:36px 0 8px}
+.step p{font-size:13px;color:var(--muted);margin:0}
+.ecosystem{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.eco-panel{border-radius:24px;padding:42px;background:var(--green);color:white;min-height:340px}
+.eco-panel.light{background:var(--stone);color:var(--ink)}
+.eco-panel h3{font-family:var(--serif);font-size:42px;font-weight:400;line-height:1;margin-bottom:18px}
+.eco-panel p{color:#d8ddd7;font-size:14px;max-width:520px}
+.eco-panel.light p{color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.tag{border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:8px 11px;font-size:11px}
+.light .tag{border-color:#c8c5bd}
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.value{padding:25px 22px 25px 0;border-bottom:1px solid var(--line)}
+.value h3{font-family:var(--serif);font-size:25px;font-weight:400;margin-bottom:8px}
+.value p{font-size:13px;color:var(--muted);margin:0;max-width:320px}
+.founder{display:grid;grid-template-columns:.65fr 1.35fr;gap:80px;align-items:start}
+.founder-mark{height:310px;border:1px solid var(--line);border-radius:26px;background:var(--stone);display:grid;place-items:center;position:relative;overflow:hidden}
+.founder-mark:before{content:"V HARA";font-family:var(--serif);font-size:74px;opacity:.08;transform:rotate(-15deg)}
+.founder-copy h3{font-family:var(--serif);font-size:48px;font-weight:400;line-height:1;margin-bottom:22px}
+.founder-copy p{color:var(--muted);font-size:16px;max-width:700px}
+.founder-name{margin-top:30px;font-weight:700}
+.founder-role{font-size:12px;color:var(--muted)}
+.meaning{background:var(--green);color:white;border-radius:28px;padding:55px;display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.meaning h2{font-family:var(--serif);font-weight:400;font-size:58px;line-height:.95;margin:0}
+.meaning p{color:#d6ddd7;font-size:15px}
+.meaning strong{color:white}
+.faq{max-width:900px;margin:auto}
+.faq-item{border-top:1px solid var(--line)}
+.faq-q{width:100%;display:flex;justify-content:space-between;gap:20px;text-align:left;background:none;border:0;padding:22px 0;font-weight:700;cursor:pointer;color:var(--ink)}
+.faq-q span:last-child{font-size:20px;color:var(--green)}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s}
+.faq-a>div{overflow:hidden}
+.faq-a p{color:var(--muted);font-size:14px;max-width:750px;padding-bottom:0}
+.faq-item.open .faq-a{grid-template-rows:1fr}
+.faq-item.open .faq-a p{padding-bottom:22px}
+.contact{background:var(--ink);color:white;border-radius:30px;padding:58px;display:grid;grid-template-columns:1.2fr .8fr;gap:60px}
+.contact h2{font-family:var(--serif);font-weight:400;font-size:clamp(48px,6vw,82px);line-height:.94;letter-spacing:-.04em}
+.contact p{color:#babdb6;max-width:600px}
+.contact-links{display:flex;flex-direction:column;justify-content:end;gap:1px}
+.contact-link{border-top:1px solid #44473f;padding:18px 0;display:flex;justify-content:space-between;font-size:14px}
+.contact-link small{color:#92968e;display:block;margin-bottom:3px}
+.contact-link b{font-weight:500}
+footer{padding:28px 0 34px}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:11px;color:var(--muted)}
+.credit{letter-spacing:.08em;text-transform:uppercase}
+.credit a{color:var(--green);font-weight:700}
+.float-call{position:fixed;z-index:30;left:28px;bottom:28px;background:var(--green);color:white;border-radius:999px;padding:13px 17px;display:flex;gap:9px;align-items:center;font-size:12px;font-weight:700;box-shadow:0 12px 28px rgba(23,24,22,.18);transition:.25s}
+.float-call:hover{transform:translateY(-3px)}
+.float-call svg{width:16px;height:16px}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:900px){
+ .container{width:min(calc(100% - 32px),var(--max))}
+ .nav{height:70px}.navlinks{display:none}.menu{display:block}
+ .navlinks.open{position:absolute;display:flex;flex-direction:column;top:70px;left:16px;right:16px;padding:18px;background:var(--white);border:1px solid var(--line);border-radius:16px;box-shadow:0 20px 50px rgba(0,0,0,.08);align-items:stretch}
+ .navlinks.open a{padding:10px}.nav-cta{text-align:center}
+ .hero{padding:75px 0 70px}.hero-grid,.section-head,.founder,.meaning,.contact,.problem-grid{grid-template-columns:1fr;gap:38px}
+ h1{font-size:clamp(55px,16vw,88px)}
+ .hero-copy{font-size:16px}.section-head{margin-bottom:40px}
+ .services,.ecosystem{grid-template-columns:1fr}.process{grid-template-columns:1fr}
+ .values{grid-template-columns:1fr 1fr}.problem{padding:30px}.meaning,.contact{padding:34px}
+ .founder-mark{height:230px}.contact-links{margin-top:10px}
+}
+@media(max-width:560px){
+ section{padding:72px 0}.nav-cta{padding:9px 12px}.brand{font-size:13px}
+ .hero{padding-top:58px}.hero-note{margin-top:10px}
+ .card{min-height:190px;padding:24px}.card h3{margin-top:36px;font-size:30px}
+ .values{grid-template-columns:1fr}.value{padding-right:0}
+ .eco-panel{padding:30px;min-height:300px}.eco-panel h3{font-size:36px}
+ .founder-copy h3{font-size:39px}.meaning h2{font-size:45px}
+ .contact h2{font-size:52px}.footer-inner{align-items:flex-start;flex-direction:column}
+ .float-call{left:16px;bottom:max(16px,env(safe-area-inset-bottom));padding:12px 14px}
+ .float-call .label{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}.marquee-track{animation:none}.reveal{opacity:1;transform:none;transition:none}.card,.btn,.float-call{transition:none}
+}
+</style>
+
+<style id="gold-theme-enhancements">
+:root{
+  --gold-gradient:linear-gradient(135deg,#8f6b20 0%,#b38a32 45%,#d0ad5c 100%);
+}
+.brand-mark{border-color:var(--gold);color:var(--gold)}
+.eyebrow:before,.number,.kicker,.step-num{background-color:transparent;color:var(--gold)}
+.navlinks a:after{background:var(--gold)}
+.nav-cta{border-color:var(--gold);color:var(--dark-gold)}
+.btn.primary{background:var(--gold-gradient);border-color:var(--gold-deep)}
+.btn.primary:hover{box-shadow:0 10px 28px rgba(143,107,32,.18)}
+.btn.secondary:hover{border-color:var(--gold);color:var(--dark-gold)}
+.hero{background:radial-gradient(circle at 88% 20%,rgba(179,138,50,.07),transparent 28%),var(--paper)}
+.marquee span:nth-child(even){color:var(--gold-deep)}
+.problem{background:#191713}
+.problem-list span{color:#c5a65c}
+.card:hover{box-shadow:0 18px 50px rgba(92,70,26,.08)}
+.eco-panel{background:linear-gradient(145deg,#201c15,#171512)}
+.eco-panel.light{background:#f1ece1}
+.meaning{background:linear-gradient(145deg,#201c15,#171512)}
+.contact{background:linear-gradient(145deg,#1d1913,#12110e)}
+.contact .kicker,.meaning .kicker{color:#d0ad5c!important}
+.float-call{background:var(--gold-gradient);box-shadow:0 12px 28px rgba(92,70,26,.20)}
+.credit a{color:var(--gold-deep)}
+.founder-mark{background:linear-gradient(145deg,#f4f0e7,#ebe4d4)}
+.tag{border-color:rgba(179,138,50,.45)}
+.light .tag{border-color:#d3c6a9}
+.value h3,.card h3,.step h3,.faq-q:hover{color:#5f4717}
+.contact .btn:not(.primary){background:transparent}
+@media(max-width:900px){
+ .navlinks.open{box-shadow:0 20px 50px rgba(70,52,18,.10)}
+}
+</style>
+
+
+<style id="outstanding-motion">
+/* --- Signature motion system --- */
+.micro-marquee{overflow:hidden;border-bottom:1px solid var(--line);background:#fffefa}
+.micro-track{display:flex;width:max-content;align-items:center;gap:20px;padding:10px 0;animation:microMove 38s linear infinite}
+.micro-track span{font-size:9px;letter-spacing:.2em;font-weight:700;color:#8f6b20}
+.micro-track i{font-style:normal;color:#c4a04f;font-size:10px}
+@keyframes microMove{to{transform:translateX(-50%)}}
+
+.hero{position:relative;overflow:hidden}
+
+.hero-grid{position:relative;z-index:1}
+.hero h1{animation:titleIn 1s cubic-bezier(.2,.75,.2,1) both}
+@keyframes titleIn{from{opacity:0;transform:translateY(35px);filter:blur(5px)}to{opacity:1;transform:none;filter:none}}
+
+.problem{position:relative;overflow:hidden}
+
+.services{perspective:1000px}
+.service-card{position:relative;overflow:hidden;isolation:isolate}
+.service-card .card-glow{position:absolute;width:180px;height:180px;border-radius:50%;right:-80px;top:-80px;background:radial-gradient(circle,rgba(179,138,50,.18),transparent 65%);opacity:0;transition:.5s}
+.service-card:hover .card-glow{opacity:1;transform:scale(1.3)}
+.service-icon{position:absolute;right:28px;top:25px;width:38px;height:38px;border:1px solid #d8c69f;border-radius:50%;display:grid;place-items:center;color:#8f6b20;font-size:16px;transition:.4s}
+.service-card:hover .service-icon{transform:rotate(45deg);background:#f7f0df}
+.service-card:nth-child(2) .service-icon{border-radius:10px}
+.service-card:nth-child(3) .service-icon{border-style:dashed}
+.service-card:nth-child(4) .service-icon{transform:rotate(-10deg)}
+.service-card:hover:nth-child(4) .service-icon{transform:rotate(20deg)}
+
+.process-animated{position:relative}
+.process-line{position:absolute;left:0;right:0;top:76px;height:1px;background:linear-gradient(90deg,transparent,#c8a95d 15%,#c8a95d 85%,transparent);transform:scaleX(0);transform-origin:left;transition:transform 1.5s ease .3s;z-index:3}
+.process-animated .process-line{transform:scaleX(1)}
+.step{position:relative;transition:background .35s,transform .35s}
+.step:hover{background:rgba(255,255,255,.55);transform:translateY(-5px)}
+.step-dot{position:absolute;top:70px;left:27px;width:13px;height:13px;border-radius:50%;background:#b38a32;border:4px solid var(--paper);z-index:4;box-shadow:0 0 0 1px #b38a32}
+.step:nth-child(3) .step-dot,.step:nth-child(4) .step-dot,.step:nth-child(5) .step-dot,.step:nth-child(6) .step-dot,.step:nth-child(7) .step-dot{left:27px}
+.step-num{margin-top:8px}
+.step h3{padding-top:22px}
+
+.network-panel{position:relative;overflow:hidden}
+.network-lines{position:absolute;inset:0;pointer-events:none;opacity:.75}
+.network-lines span{position:absolute;left:50%;top:52%;width:240px;height:1px;background:rgba(207,179,107,.32);transform-origin:left}
+.network-lines span:nth-child(1){transform:rotate(15deg)}
+.network-lines span:nth-child(2){transform:rotate(92deg)}
+.network-lines span:nth-child(3){transform:rotate(145deg)}
+.network-lines span:nth-child(4){transform:rotate(-35deg)}
+.network-lines b{position:absolute;left:calc(50% - 27px);top:calc(52% - 27px);width:54px;height:54px;border:1px solid rgba(207,179,107,.5);border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:25px;font-weight:400;color:#d0ad5c;animation:pulseCore 3s ease-in-out infinite}
+@keyframes pulseCore{50%{box-shadow:0 0 0 12px rgba(179,138,50,.05),0 0 0 26px rgba(179,138,50,.025)}}
+
+.founder-mark{position:relative;overflow:hidden}
+.founder-orbit{width:180px;height:180px;border:1px solid #c7b485;border-radius:50%;position:relative;display:grid;place-items:center}
+.founder-orbit:before,.founder-orbit:after{content:"";position:absolute;border:1px solid #ded4bd;border-radius:50%}
+.founder-orbit:before{inset:22px;transform:rotate(45deg)}
+.founder-orbit:after{inset:45px;transform:rotate(-45deg)}
+.founder-orbit span{position:absolute;width:8px;height:8px;border-radius:50%;background:#b38a32}
+.founder-orbit span:nth-child(1){top:10px;left:50%;animation:orbitOne 6s linear infinite}
+.founder-orbit span:nth-child(2){right:18px;bottom:42px;animation:orbitTwo 7s linear infinite}
+.founder-orbit span:nth-child(3){left:18px;bottom:42px;animation:orbitThree 8s linear infinite}
+.founder-orbit b{font-family:var(--serif);font-size:60px;font-weight:400;color:#8f6b20;z-index:2}
+@keyframes orbitOne{to{transform:rotate(360deg) translateX(70px) rotate(-360deg)}}
+@keyframes orbitTwo{to{transform:rotate(-360deg) translateX(62px) rotate(360deg)}}
+@keyframes orbitThree{to{transform:rotate(360deg) translateX(55px) rotate(-360deg)}}
+.founder-caption{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-size:8px;letter-spacing:.22em;color:#8f6b20;font-weight:700}
+
+.contact{position:relative;overflow:hidden}
+.contact-shimmer{position:absolute;top:-100%;left:-20%;width:25%;height:300%;background:linear-gradient(90deg,transparent,rgba(210,179,99,.08),transparent);transform:rotate(18deg);animation:shimmer 7s ease-in-out infinite;pointer-events:none}
+@keyframes shimmer{0%,55%{left:-30%}100%{left:130%}}
+.contact>*:not(.contact-shimmer){position:relative;z-index:1}
+
+.final-marquee{overflow:hidden;background:var(--gold);color:#171512;border-top:1px solid #8f6b20;border-bottom:1px solid #8f6b20}
+.final-marquee-track{display:flex;align-items:center;width:max-content;animation:finalMove 22s linear infinite;padding:18px 0}
+.final-marquee span,.final-marquee b{font-family:var(--serif);font-size:25px;font-weight:400;padding:0 20px}
+.final-marquee i{font-style:normal;font-size:13px}
+@keyframes finalMove{to{transform:translateX(-50%)}}
+
+.card,.step,.value,.eco-panel,.founder-copy,.problem-grid{will-change:transform}
+@media(max-width:900px){
+ .process-line{display:none}
+ .step-dot{top:28px;left:auto!important;right:25px}
+ .step h3{padding-top:0}
+ .network-lines{opacity:.4}
+}
+@media(max-width:560px){
+ .micro-track{animation-duration:28s}
+ .final-marquee-track{animation-duration:17s}
+ .service-icon{right:20px}
+}
+@media(prefers-reduced-motion:reduce){
+ .micro-track,.final-marquee-track,.founder-orbit span,.contact-shimmer{animation:none!important}
+ .process-line{transform:none!important}
+}
+</style>
+
+
+<style id="vazhigo-inspired-layout">
+:root{--max:1160px;--gold:#b58a36;--gold-deep:#80601f;--paper:#fcfbf8;--wash:#f5f1e7;--line:#ddd6c8}
+html{scroll-padding-top:78px}
+body{background:#fff;color:#171512;overflow-x:hidden}
+.container{width:min(calc(100% - 48px),1160px)}
+header{background:rgba(255,255,255,.93);border-bottom:1px solid var(--line)}
+.nav{height:76px}
+.navlinks{gap:25px}
+.navlinks a.active,.navlinks a:hover{color:var(--gold-deep)}
+.navlinks a.active:after{width:100%}
+.hero{padding:76px 0 68px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.hero:after{content:"V HARA";position:absolute;right:-20px;bottom:-28px;font-family:var(--serif);font-size:clamp(130px,20vw,290px);line-height:.8;color:transparent;-webkit-text-stroke:1px #e8e1d3;pointer-events:none;z-index:0}
+.hero-grid{position:relative;z-index:1;grid-template-columns:1.45fr .55fr;gap:64px;align-items:end}
+h1{font-size:clamp(60px,8.2vw,112px);max-width:900px}
+.hero-copy{font-size:17px;max-width:540px}
+.hero-note{background:var(--ink);color:#fff;border:0;border-radius:18px;padding:25px;position:relative;overflow:hidden;min-height:190px;box-shadow:0 24px 60px rgba(20,18,13,.09)}
+.hero-note:before{content:"";position:absolute;left:0;top:0;width:100%;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);animation:scan 3.5s linear infinite}
+.hero-note strong{color:#fff;font-family:var(--serif);font-size:25px;line-height:1.05;margin-bottom:15px}
+@keyframes scan{0%{transform:translateX(-100%)}100%{transform:translateX(100%)} }
+.marquee{border-block:1px solid var(--line);border-bottom:0;background:#fff}
+.marquee span{font-size:clamp(26px,3vw,42px);padding:18px 24px;color:#3f3b34}
+.marquee span:nth-child(even){color:var(--gold-deep)}
+.micro-marquee{background:var(--ink);border-bottom:0;color:#fff}
+.micro-track{padding:8px 0;gap:18px}
+.micro-track span{color:#fff;font-size:9px;letter-spacing:.22em}
+.micro-track i{color:#d2ad63}
+section{padding:92px 0}
+section:nth-of-type(even){background:#faf8f3}
+.section-head{grid-template-columns:.68fr 1.32fr;gap:64px;margin-bottom:48px;align-items:start}
+.section-head h2{font-size:clamp(43px,5vw,70px);max-width:18ch}
+.section-head p{max-width:650px}
+.kicker{color:var(--gold-deep)}
+.problem{border-radius:22px;padding:0;overflow:hidden;background:var(--ink);box-shadow:0 22px 60px rgba(23,21,18,.08)}
+.problem-grid{grid-template-columns:1fr 1fr;gap:0;align-items:stretch}
+.problem-grid>div:first-child{padding:48px}
+.problem h3{font-size:clamp(38px,4vw,58px)}
+.problem-list{border:0;background:#302e28;grid-template-columns:1fr 1fr}
+.problem-list div{padding:22px;background:#171512;border-bottom:1px solid #34312b;border-left:1px solid #34312b;display:flex;align-items:center;min-height:74px}
+.problem-list span{color:#bca064;font-weight:700}
+.services{grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.card{border-radius:0;border:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:32px;min-height:280px;background:#fff}
+.card:nth-child(2),.card:nth-child(3){background:#faf8f3}
+.card h3{font-size:clamp(30px,3vw,42px);max-width:10ch;margin-top:65px}
+.card p{max-width:470px;font-size:14px}
+.service-icon{right:30px;top:29px}
+.process{grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.step{min-height:245px;padding:28px;position:relative;background:#fff}
+.step:nth-child(even){background:#faf8f3}
+.step-num{font-size:42px;color:var(--gold-deep)}
+.step h3{font-size:20px;margin:42px 0 8px}
+.step p{max-width:250px}
+.process-line,.step-dot{display:none}
+.ecosystem{grid-template-columns:1.2fr .8fr;gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.eco-panel{border-radius:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-height:390px;padding:42px;background:var(--ink)}
+.eco-panel.light{background:#f5f1e7}
+.eco-panel h3{font-size:clamp(38px,4vw,58px);max-width:8ch}
+.network-lines{opacity:.55}
+.values{grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.value{min-height:190px;padding:25px 25px 28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
+.value:nth-child(even){background:#faf8f3}
+.value h3{font-size:27px}
+.value:before{content:"✦";display:block;color:var(--gold);font-size:12px;margin-bottom:24px}
+.meaning{border-radius:0;padding:54px;grid-template-columns:1fr 1fr;background:var(--ink);position:relative;overflow:hidden}
+.meaning:after{content:"HARA";position:absolute;right:-10px;bottom:-55px;font-family:var(--serif);font-size:180px;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.07);pointer-events:none}
+.meaning>*{position:relative;z-index:1}
+.founder{grid-template-columns:.72fr 1.28fr;gap:60px}
+.founder-mark{height:360px;background:#f5f1e7;border-radius:0}
+.founder-copy h3{font-size:clamp(42px,5vw,65px);max-width:12ch}
+.faq{max-width:none;border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{font-family:var(--serif);font-size:clamp(21px,2.2vw,30px);padding:24px 4px}
+.faq-q span:last-child{font-family:var(--sans);font-size:25px}
+.contact{border-radius:0;padding:56px;grid-template-columns:1.15fr .85fr;min-height:430px}
+.contact h2{max-width:9ch}
+.contact-link{padding:20px 0}
+.final-marquee{margin-top:0}
+.final-marquee-track{padding:22px 0}
+.final-marquee span,.final-marquee b{font-size:clamp(26px,3.4vw,48px)}
+footer{background:#fff;padding:26px 0 32px}
+.footer-inner{padding-top:0}
+.credit{font-size:10px}
+.float-call{background:var(--gold-deep);box-shadow:0 12px 30px rgba(89,66,24,.22)}
+@media(max-width:900px){
+ .container{width:min(calc(100% - 32px),1160px)}
+ .hero{padding:58px 0 52px}.hero-grid{grid-template-columns:1fr;gap:35px}.hero-note{max-width:620px}
+ .hero:after{font-size:24vw;bottom:0}
+ section{padding:72px 0}.section-head{grid-template-columns:1fr;gap:15px;margin-bottom:34px}.section-head h2{max-width:17ch}
+ .problem-grid{grid-template-columns:1fr}.problem-grid>div:first-child{padding:34px}.problem-list{grid-template-columns:1fr 1fr}
+ .services,.process,.ecosystem{grid-template-columns:1fr 1fr}
+ .card{min-height:250px}.step{min-height:225px}
+ .ecosystem{grid-template-columns:1fr}.eco-panel{min-height:330px}
+ .values{grid-template-columns:1fr 1fr}.founder{grid-template-columns:1fr;gap:35px}.founder-mark{height:300px}
+ .meaning,.contact{grid-template-columns:1fr;gap:30px}
+ .contact h2{max-width:12ch}
+}
+@media(max-width:620px){
+ .container{width:min(calc(100% - 28px),1160px)}.nav{height:66px}.navlinks.open{top:66px;left:14px;right:14px}
+ .hero{padding:42px 0 42px}.hero-grid{gap:27px}h1{font-size:clamp(48px,14vw,74px);line-height:.9;margin-bottom:22px}.hero-copy{font-size:15px}
+ .actions{margin-top:25px}.btn{width:100%}.hero-note{padding:21px;min-height:0}.hero-note strong{font-size:22px}
+ .marquee span{font-size:27px;padding:15px 18px}.micro-track{gap:14px}
+ section{padding:58px 0}.section-head h2{font-size:clamp(38px,10vw,54px)}.section-head p{font-size:15px}
+ .problem-grid>div:first-child{padding:27px}.problem h3{font-size:37px}.problem-list{grid-template-columns:1fr}.problem-list div{min-height:60px;padding:17px}
+ .services,.process,.ecosystem,.values{grid-template-columns:1fr}.card{min-height:0;padding:25px}.card h3{margin-top:56px;font-size:34px;max-width:12ch}.step{min-height:0;padding:24px}.step h3{margin-top:32px}
+ .eco-panel{min-height:0;padding:29px}.eco-panel h3{font-size:39px}.value{min-height:0;padding:24px}.value:before{margin-bottom:17px}
+ .meaning{padding:32px}.meaning h2{font-size:43px}.meaning:after{font-size:100px;bottom:-20px}
+ .founder-mark{height:260px}.founder-copy h3{font-size:42px}.founder-copy p{font-size:15px}
+ .faq-q{font-size:21px;padding:21px 0}.faq-a p{font-size:14px}
+ .contact{padding:31px 24px;min-height:0}.contact h2{font-size:48px}.contact-link{display:block}.contact-link b{display:block;margin-top:4px;overflow-wrap:anywhere}
+ .final-marquee-track{padding:18px 0}.final-marquee span,.final-marquee b{font-size:28px}
+ .footer-inner{flex-direction:column;align-items:flex-start;gap:8px}.float-call{left:14px;bottom:max(14px,env(safe-area-inset-bottom));padding:12px 14px}
+}
+</style>
+
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#top" aria-label="V Hara home"><span class="brand-mark">V</span> V HARA</a>
+    <nav class="navlinks" id="navlinks" aria-label="Primary navigation">
+      <a href="#about">About</a><a href="#services">Services</a><a href="#process">How We Work</a><a href="#why">Why V Hara</a><a class="nav-cta" href="#contact">Get Started</a>
+    </nav>
+    <button class="menu" id="menu" aria-label="Open navigation" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="container hero-grid reveal">
+  <div>
+   <div class="eyebrow">Business & Legal Consulting · Kerala</div>
+   <h1>Where Problems Find Their First Solution.</h1>
+   <p class="hero-copy">V Hara helps businesses move through complex challenges by connecting them with the right expertise, coordinating the path forward, and staying involved until the solution is clear.</p>
+   <div class="actions"><a class="btn primary" href="#contact">Start a conversation <span>↗</span></a><a class="btn secondary" href="#process">See how it works</a></div>
+  </div>
+  <div class="hero-note">
+   <strong>One point of access. The right expertise.</strong>
+   From business management and compliance to audit support and tax filing, V Hara acts as a practical first gateway when a business needs the right specialist.
+  </div>
+ </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="marquee-track">
+ <span>Identify</span><span>Connect</span><span>Coordinate</span><span>Solve</span><span>Follow Up</span><span>Identify</span><span>Connect</span><span>Coordinate</span><span>Solve</span><span>Follow Up</span>
+</div></div>
+<div class="micro-marquee" aria-hidden="true"><div class="micro-track">
+ <span>BUSINESS</span><i>✦</i><span>LEGAL</span><i>✦</i><span>COMPLIANCE</span><i>✦</i><span>GROWTH</span><i>✦</i><span>EXPERTISE</span><i>✦</i><span>BUSINESS</span><i>✦</i><span>LEGAL</span><i>✦</i><span>COMPLIANCE</span><i>✦</i><span>GROWTH</span><i>✦</i><span>EXPERTISE</span><i>✦</i>
+</div></div>
+
+<section id="about">
+ <div class="container">
+  <div class="section-head reveal"><div class="kicker">01 / The idea</div><div><h2>Business challenges rarely arrive one at a time.</h2><p>Finding the right answer can mean finding the right person first. V Hara simplifies that first step.</p></div></div>
+  <div class="problem reveal">
+   <div class="problem-grid">
+    <div><h3>Instead of searching everywhere, start in one place.</h3><p>Tell us what is holding your business back. We understand the requirement, identify the expertise needed, connect you with a suitable professional, and help coordinate the journey.</p></div>
+    <div class="problem-list">
+      <div><span>01</span> Business decisions</div><div><span>02</span> Legal compliance</div>
+      <div><span>03</span> Audit requirements</div><div><span>04</span> Tax filing</div>
+      <div><span>05</span> Specialist connections</div><div><span>06</span> Ongoing coordination</div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="services">
+ <div class="container">
+  <div class="section-head reveal"><div class="kicker">02 / What we do</div><div><h2>Focused services. Connected expertise.</h2><p>V Hara’s current service offering is designed around the recurring business, legal and financial needs of growing organisations.</p></div></div>
+  <div class="services">
+   <article class="card reveal service-card" data-service="01"><div class="card-glow"></div><div class="service-icon">↗</div><div class="number">01 — BUSINESS</div><h3>Business Management Consulting</h3><p>Practical support for businesses navigating decisions, operational challenges and growth-related requirements.</p></article>
+   <article class="card reveal service-card" data-service="02"><div class="card-glow"></div><div class="service-icon">⌁</div><div class="number">02 — LEGAL</div><h3>Legal Compliance Services</h3><p>Access to suitable legal and compliance expertise for businesses that need clarity and structured support.</p></article>
+   <article class="card reveal service-card" data-service="03"><div class="card-glow"></div><div class="service-icon">◌</div><div class="number">03 — AUDIT</div><h3>Audit Support</h3><p>Coordination with relevant professionals to help businesses approach audit requirements with greater clarity.</p></article>
+   <article class="card reveal service-card" data-service="04"><div class="card-glow"></div><div class="service-icon">⌗</div><div class="number">04 — TAX</div><h3>Tax Filing Services</h3><p>Connect with the appropriate tax professionals and coordinate the requirements needed for timely filing and support.</p></article>
+  </div>
+ </div>
+</section>
+
+<section id="process">
+ <div class="container">
+  <div class="section-head reveal"><div class="kicker">03 / How we work</div><div><h2>From a business problem to the right expertise.</h2><p>A simple six-stage approach keeps the client at the centre and the solution moving.</p></div></div>
+  <div class="process process-animated">
+   <div class="process-line" aria-hidden="true"></div>
+   <div class="step reveal"><div class="step-dot"></div><div class="step-num">01</div><h3>Client Inquiry</h3><p>Start with the challenge, requirement or question you need help with.</p></div>
+   <div class="step reveal"><div class="step-dot"></div><div class="step-num">02</div><h3>Requirement Analysis</h3><p>We understand the situation and clarify what kind of expertise is actually required.</p></div>
+   <div class="step reveal"><div class="step-dot"></div><div class="step-num">03</div><h3>Expert Matching</h3><p>We identify a suitable professional or specialist from our network.</p></div>
+   <div class="step reveal"><div class="step-dot"></div><div class="step-num">04</div><h3>Partner Engagement</h3><p>We help establish the connection and align expectations around the requirement.</p></div>
+   <div class="step reveal"><div class="step-dot"></div><div class="step-num">05</div><h3>Solution Delivery</h3><p>The selected professional works on the requirement while V Hara supports coordination.</p></div>
+   <div class="step reveal"><div class="step-dot"></div><div class="step-num">06</div><h3>Follow-up</h3><p>We stay connected to help keep communication and next steps clear.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="why">
+ <div class="container">
+  <div class="section-head reveal"><div class="kicker">04 / The network</div><div><h2>The right connection can change the speed of a solution.</h2><p>V Hara is built around a curated professional ecosystem rather than trying to do everything under one roof.</p></div></div>
+  <div class="ecosystem">
+   <div class="eco-panel reveal network-panel">
+    <div class="network-lines" aria-hidden="true"><span></span><span></span><span></span><span></span><b>V</b></div><h3>A gateway to expertise.</h3><p>Our model connects businesses with relevant specialists across professional disciplines.</p><div class="tags"><span class="tag">Advocates</span><span class="tag">Chartered Accountants</span><span class="tag">Company Secretaries</span><span class="tag">Auditors</span><span class="tag">Tax Consultants</span><span class="tag">Business Advisors</span><span class="tag">Digital Service Providers</span></div></div>
+   <div class="eco-panel light reveal"><h3>Built for growing businesses.</h3><p>V Hara’s framework is designed for startups, SMEs and growing mid-sized businesses across sectors.</p><div class="tags"><span class="tag">Startups</span><span class="tag">SMEs</span><span class="tag">Manufacturing</span><span class="tag">Retail</span><span class="tag">More sectors ahead</span></div></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="container">
+  <div class="section-head reveal"><div class="kicker">05 / Why V Hara</div><div><h2>Less friction. More clarity.</h2><p>The value is not simply in making an introduction. It is in making the route to the right solution easier.</p></div></div>
+  <div class="values">
+   <div class="value reveal"><h3>One point of access</h3><p>Begin with one conversation instead of navigating multiple professional doors.</p></div>
+   <div class="value reveal"><h3>Curated network</h3><p>Connect with relevant expertise through a structured partner ecosystem.</p></div>
+   <div class="value reveal"><h3>Faster access</h3><p>Reduce the time spent figuring out who can actually help.</p></div>
+   <div class="value reveal"><h3>Flexible access</h3><p>A practical model suited to different business requirements and stages.</p></div>
+   <div class="value reveal"><h3>Coordination</h3><p>Support can continue beyond the initial introduction when coordination is needed.</p></div>
+   <div class="value reveal"><h3>India-first</h3><p>A framework designed around the needs of businesses operating in India.</p></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="container">
+  <div class="meaning reveal">
+   <div><div class="kicker" style="color:#b8c5ba">06 / The name</div><h2>Strength that helps carry the burden.</h2></div>
+   <div><p><strong>V</strong> carries the idea of “We” — together — and the Sanskrit association of <strong>Vīra</strong>, strength and capability.</p><p><strong>Hara</strong> can mean one who removes, carries away or relieves a burden.</p><p>Together, V Hara represents a simple belief: <strong>the right expertise and the right connection can make difficult business problems easier to carry.</strong></p></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="container">
+  <div class="founder">
+   <div class="founder-mark reveal">
+    <div class="founder-orbit"><span></span><span></span><span></span><b>V</b></div>
+    <div class="founder-caption">FOUNDED WITH PURPOSE</div>
+   </div>
+   <div class="founder-copy reveal"><div class="kicker">07 / Founder</div><h3>Businesses should not have to face complex challenges alone.</h3><p>V Hara was founded by <strong>Leya Mariyam</strong> with a clear purpose: create a trusted gateway where businesses can explain a problem once, find the right expertise, and move forward with greater confidence.</p><p>The goal is not to make every service part of V Hara. It is to make the path to the right service simpler.</p><div class="founder-name">Leya Mariyam</div><div class="founder-role">Founder, V Hara</div></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="container">
+  <div class="section-head reveal"><div class="kicker">08 / Questions</div><div><h2>Common questions.</h2><p>A few things businesses often want to know before starting a conversation.</p></div></div>
+  <div class="faq">
+   <div class="faq-item"><button class="faq-q">What does V Hara do?<span>+</span></button><div class="faq-a"><div><p>V Hara provides business and legal consulting support and connects clients with suitable professionals for requirements such as business management, legal compliance, audit support and tax filing.</p></div></div></div>
+   <div class="faq-item"><button class="faq-q">Is V Hara the professional delivering every service?<span>+</span></button><div class="faq-a"><div><p>V Hara works through a partner-based model. Depending on the requirement, a suitable specialist may be connected with the client for the professional service itself, while V Hara supports the coordination.</p></div></div></div>
+   <div class="faq-item"><button class="faq-q">How are professionals selected?<span>+</span></button><div class="faq-a"><div><p>V Hara’s model is based on a curated professional network and matching the client’s requirement with relevant expertise. Specific engagement terms are discussed according to the requirement.</p></div></div></div>
+   <div class="faq-item"><button class="faq-q">Are there additional referral fees?<span>+</span></button><div class="faq-a"><div><p>Fees depend on the service and professional engagement. Any applicable commercial terms should be clarified with V Hara before proceeding.</p></div></div></div>
+  </div>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="container">
+  <div class="contact reveal">
+   <div class="contact-shimmer" aria-hidden="true"></div>
+   <div><div class="kicker" style="color:#b8c5ba">09 / Start here</div><h2>Have a problem to solve?</h2><p>Tell V Hara what you are trying to resolve. We’ll help you understand the next step and the expertise that may be needed.</p><div class="actions"><a class="btn primary" href="tel:+917012233247">Call V Hara ↗</a><a class="btn" style="color:white;border-color:#666a62" href="mailto:teamvhara@gmail.com">Email us</a></div></div>
+   <div class="contact-links">
+    <a class="contact-link" href="tel:+917012233247"><span><small>Call</small><b>7012233247</b></span><span>↗</span></a>
+    <a class="contact-link" href="mailto:teamvhara@gmail.com"><span><small>Email</small><b>teamvhara@gmail.com</b></span><span>↗</span></a>
+    <div class="contact-link"><span><small>Based in</small><b>Kerala, India</b></span><span>⌖</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+<div class="final-marquee" aria-hidden="true">
+ <div class="final-marquee-track">
+  <span>HAVE A PROBLEM?</span><b>LET'S FIND THE RIGHT EXPERTISE.</b><i>✦</i>
+  <span>HAVE A PROBLEM?</span><b>LET'S FIND THE RIGHT EXPERTISE.</b><i>✦</i>
+ </div>
+</div>
+</main>
+
+<footer>
+ <div class="container footer-inner">
+  <div>© <span id="year"></span> V Hara. All rights reserved.</div>
+  <div class="credit">Developed by <a href="https://quadmedia-tvm.vercel.app/" target="_blank" rel="noopener noreferrer">QUADMEDIA.TVM</a></div>
+ </div>
+</footer>
+
+<a class="float-call" href="tel:+917012233247" aria-label="Call V Hara at 7012233247">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg><span class="label">Call V Hara</span>
+</a>
+
+<script>
+const menu=document.getElementById('menu'), nav=document.getElementById('navlinks');
+menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',open)});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}));
+document.querySelectorAll('.faq-q').forEach(btn=>btn.addEventListener('click',()=>{const item=btn.parentElement;item.classList.toggle('open');btn.querySelector('span').textContent=item.classList.contains('open')?'−':'+'}));
+document.getElementById('year').textContent=new Date().getFullYear();
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+const finePointer = window.matchMedia('(pointer:fine)').matches;
+if (finePointer) {
+  document.querySelectorAll('.service-card').forEach(card=>{
+    card.addEventListener('pointermove',e=>{
+      const r=card.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+      card.style.transform=`perspective(900px) rotateX(${(-y*3).toFixed(2)}deg) rotateY(${(x*3).toFixed(2)}deg) translateY(-4px)`;
+    });
+    card.addEventListener('pointerleave',()=>card.style.transform='');
+  });
+}
+const sections=[...document.querySelectorAll('main section[id]')];
+const navAnchors=[...document.querySelectorAll('.navlinks a[href^="#"]')];
+const activeObserver=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      navAnchors.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+entry.target.id));
+    }
+  });
+},{rootMargin:'-35% 0px -55% 0px'});
+sections.forEach(s=>activeObserver.observe(s));
+</script>
+</body>
+</html>
